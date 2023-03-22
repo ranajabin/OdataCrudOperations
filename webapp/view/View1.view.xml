@@ -1,0 +1,74 @@
+<mvc:View controllerName="crudoperation.odatacrudoperationsproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center">
+    <headerContent>  
+     
+          <Button text = "Add" icon="sap-icon://add" id = "add1" press="onLoadDialog" visible="false" />
+         <Button text="Edit" icon="sap-icon://edit"  id = "edit1" press = "handleEditStatement" visible="false"/>
+         <Button  text = "Delete" icon="sap-icon://delete" id = "delete1" press = "handleDeleteStatement" visible="false"/>
+         <Button text="Locked" icon="sap-icon://locked"  press="Lock" type="Transparent" id = "lock1" />
+
+    </headerContent>
+
+        <content >
+
+        <Toolbar>
+                <ToolbarSpacer />
+                <SearchField width="20%" search="onFilterSearch" />
+        </Toolbar>
+
+          <Table items = "{Data1>/results}" id = "table1" mode = "None" sticky="ColumnHeaders,HeaderToolbar" alternateRowColors="true" inset = "true">
+                <columns>
+
+                    <Column demandPopin = "true">
+                        <Text text="Name" />
+                    </Column>
+
+                     <Column demandPopin = "true">
+                        <Text text="Employee Role" />
+                     </Column>
+
+                     <Column demandPopin = "true">
+                        <Text text="Gender" />
+                     </Column>
+
+                     <Column demandPopin = "true" >
+                        <Text text="Number" />
+                     </Column>
+
+                     <Column  demandPopin = "true">
+                        <Text text="Address" />
+                     </Column>
+
+                     <!-- <Column demandPopin = "true">
+                            <Text text="Action" />
+                    </Column> -->
+
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells> 
+                           
+                            <Input value ="{Data1>Name}" editable = "false" id = "nm1" />  
+
+                            <Input value ="{Data1>Zemprole}" editable="false"  id = "emprl"  />
+
+                            <Input value ="{Data1>Zgender}" editable="false"  id = "gndr"  />
+
+                            <Input value ="{Data1>Znumber}" editable = "false" id = "num"  />
+
+                            <Input value ="{Data1>Zcity}" editable = "false" id = "cty"  />
+                            <!-- <HBox>
+                              <Button icon="sap-icon://edit" text="Edit" press = "handleEditStatement" />
+                              <Button icon="sap-icon://delete" text = "Delete" press = "handleDeleteStatement" />
+                            </HBox> -->
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>   
+        </content>
+    </Page>
+</mvc:View>

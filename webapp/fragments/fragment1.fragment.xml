@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout">
+    <Dialog id="idDialog">
+        <content>
+                     <f:SimpleForm  alignItems="Center" alignContent="Center" width="250px" items = "{Create>/results}" id = "frm1" height = "400px" title="Sales Detail" class=".sapMFlexBoxBGTransparent">
+                <f:content>
+                                    <Label text=" Name: " />
+                                   <Input value ="{Create>/0/Name}" valueState = "{= ${Create>/0/Name} === ' ' ? 'Error' : 'Success'}" required = "true" id = "nam1"  width = "70%" />
+
+                                   <Label text="Employee Role: " />
+                                   <Input value ="{Create>/0/Zemprole}" required = "true"  id = "rol1" width = "70%" />
+                                  
+                                    <Label text="Gender: " />
+                                   <Input value ="{Create>/0/Zgender}" required = "true"  id = "gndr1" width = "70%"  />
+
+                                     <!-- <Label text="Gender" />
+                    <RadioButtonGroup selectedIndex="{Create>/0/Zgender}" columns="4" id = "gndr1" select="onGenderSelect" width="100%">
+                        <buttons>
+                            <RadioButton id="rbFemaleId" text="Female" />
+                            <RadioButton id="rbMaleId" text="Male" />
+                        </buttons>
+                    </RadioButtonGroup> -->
+
+                                    <Label text="Mob No: " />
+                                   <Input value ="{Create>/0/Znumber}" required = "true"  maxLength = "10" id = "nmbr1" width = "70%"  />
+
+                                    <Label text="Address: " />
+                                   <Input value ="{Create>/0/Zcity}" required = "true"  id = "adrs1" width = "70%" />
+
+                                 
+                        </f:content>
+                    </f:SimpleForm>  
+
+               <!--     <beginButton>
+                      <Button text="Save" type="Accept" press="onSave"/>
+                </beginButton>
+
+                <endButton>
+                      <Button text="Close" type="Reject" press="onClose"/>
+                </endButton>   --> 
+
+           <HBox justifyContent="End" alignItems="Start">
+                <Button type="Transparent" text="Save" press="handleCreateStatement" />
+                <Button type="Transparent" text="cancel" press="onClose" />
+            </HBox>    
+     
+        </content>
+    </Dialog>
+</core:FragmentDefinition>
